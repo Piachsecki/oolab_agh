@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20326ec3-5527-4288-ac70-5e146ace9a74" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Direction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/World.java" afterDir="false" />
+    <list default="true" id="20326ec3-5527-4288-ac70-5e146ace9a74" name="Changes" comment="LAB 1 - World class and enum Direction implemantation.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/MapDirection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/MapDirectionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Vector2d.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Vector2dTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/MoveDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +27,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -57,12 +52,19 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="World" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="agh.ics.oop.World" />
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="agh.ics.oop" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.MapDirectionTest">
+    <configuration name="MapDirectionTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="oolab.main" />
       <extension name="coverage">
         <pattern>
@@ -70,13 +72,93 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="agh.ics.oop" />
+      <option name="MAIN_CLASS_NAME" value="agh.ics.oop.MapDirectionTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Vector2dTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="oolab.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="agh.ics.oop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="agh.ics.oop" />
+      <option name="MAIN_CLASS_NAME" value="agh.ics.oop.Vector2dTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Vector2dTest.opposite" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="oolab.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="agh.ics.oop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="agh.ics.oop" />
+      <option name="MAIN_CLASS_NAME" value="agh.ics.oop.Vector2dTest" />
+      <option name="METHOD_NAME" value="opposite" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Vector2dTest.precedes" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="oolab.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="agh.ics.oop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="agh.ics.oop" />
+      <option name="MAIN_CLASS_NAME" value="agh.ics.oop.Vector2dTest" />
+      <option name="METHOD_NAME" value="precedes" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Vector2dTest.testToString" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="oolab.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="agh.ics.oop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="agh.ics.oop" />
+      <option name="MAIN_CLASS_NAME" value="agh.ics.oop.Vector2dTest" />
+      <option name="METHOD_NAME" value="testToString" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.World" />
+        <item itemvalue="TestNG.MapDirectionTest" />
+        <item itemvalue="TestNG.Vector2dTest" />
+        <item itemvalue="TestNG.Vector2dTest.testToString" />
+        <item itemvalue="TestNG.Vector2dTest.opposite" />
+        <item itemvalue="TestNG.Vector2dTest.precedes" />
       </list>
     </recent_temporary>
   </component>
@@ -88,8 +170,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669304917820</updated>
-      <workItem from="1669304920159" duration="5900000" />
+      <workItem from="1669304920159" duration="20554000" />
     </task>
+    <task id="LOCAL-00001" summary="LAB 1 - World class and enum Direction implemantation.">
+      <created>1669314329379</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669314329379</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,5 +195,14 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="LAB 1 - World class and enum Direction implemantation." />
+    <option name="LAST_COMMIT_MESSAGE" value="LAB 1 - World class and enum Direction implemantation." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/oolab$Vector2dTest.ic" NAME="Vector2dTest Coverage Results" MODIFIED="1669393478434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>agh.ics.oop.*</FILTER>
+    </SUITE>
   </component>
 </project>
