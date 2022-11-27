@@ -5,21 +5,12 @@ public class World {
 
     public static void main(String[] args) {
         System.out.println("Start");
-
-        Animal animal = new Animal();
-        String[] arr = {"f", "f", "l"};
-        OptionsParser optionsParser = new OptionsParser();
-        MoveDirection[] directions = optionsParser.parse(arr);
-        System.out.println("Animal position before moving " + animal);
-        run(directions, animal);
-        System.out.println("Animal position after moving " + animal);
-
+        MoveDirection[] directions = new OptionsParser().parse(args);
+        IWorldMap map = new RectangularMap(10, 5);
+        Vector2d[] positions = {new Vector2d(2, 2), new Vector2d(3, 4)};
+        MapVisualizer mapVisualizer = new MapVisualizer(map);
+        mapVisualizer.draw(new Vector2d(0, 0), new Vector2d(10, 5));
         System.out.println("Stop");
     }
 
-    private static void run(MoveDirection[] directions, Animal animal) {
-        for (MoveDirection direction : directions) {
-            animal.move(direction);
-        }
-    }
 }
