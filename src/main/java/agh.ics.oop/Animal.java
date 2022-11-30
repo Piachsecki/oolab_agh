@@ -6,19 +6,23 @@ public class Animal {
 
     private IWorldMap map;
 
-
     public Animal(IWorldMap map){
+        this.mapDirection = MapDirection.NORTH;
+        this.position = new Vector2d(2, 2);
+        this.map = map;
     }
 
     public Animal(IWorldMap map, Vector2d initialPosition ){
+        this.mapDirection = MapDirection.NORTH;
         this.position = initialPosition;
+        this.map = map;
     }
 
-    public Animal(){
-
+    public Animal() {
         this.mapDirection = MapDirection.NORTH;
         this.position = new Vector2d(2, 2);
     }
+
     public MapDirection getMapDirection() {
         return mapDirection;
     }
@@ -37,81 +41,52 @@ public class Animal {
     }
 
     @Override
-    public String toString() {
-        switch (this.getMapDirection()){
-            case NORTH:
-                return "N";
-            case SOUTH:
-                return "S";
-            case EAST:
-                return "E";
-            case WEST:
-                return "W";
-        }
-        return null;
+    public String toString(){
+        return switch (this.getMapDirection()){
+            case EAST -> "E";
+            case WEST -> "W";
+            case NORTH -> "N";
+            case SOUTH -> "S";
+        };
     }
 
     public boolean isAt(Vector2d position) {
-        return this.getPosition().equals(position);
+        return this.position.equals(position);
     }
 
     public IWorldMap getMap() {
         return map;
     }
 
-    public void move(MoveDirection direction) {
 
-        MapDirection mapDirectionTemp = this.getMapDirection();
-        if (direction == MoveDirection.LEFT) {
-            this.setMapDirection(MapDirection.valueOf(mapDirectionTemp.previous()));
-        }
-        if (direction == MoveDirection.RIGHT) {
-            this.setMapDirection(MapDirection.valueOf(mapDirectionTemp.next()));
+    void move(MoveDirection direction){
+        Vector2d temp_position;
+        switch (direction) {
+            case RIGHT -> mapDirection = mapDirection.next();
+            case LEFT -> mapDirection = mapDirection.previous();
+            case FORWARD-> {
+
+                temp_position = position.add(mapDirection.toUnitVector());
+                if(map.canMoveTo(temp_position)){
+
+                    position=temp_position;
+                }
+
+            }
+            case BACKWARD -> {
+                temp_position = position.subtract(mapDirection.toUnitVector());
+                if(map.canMoveTo(temp_position)){
+                    position=temp_position;
+                }
+
+            }
         }
 
-        if (direction == MoveDirection.FORWARD) {
-            Vector2d movedNorth = this.getPosition().add(new Vector2d(0, 1));
-            Vector2d movedSouth = this.getPosition().add(new Vector2d(0, -1));
-            Vector2d movedEast = this.getPosition().add(new Vector2d(1, 0));
-            Vector2d movedWest = this.getPosition().add(new Vector2d(-1, 0));
-            forwardAndBackwardMovement(mapDirectionTemp, movedNorth, movedSouth, movedEast, movedWest);
-        }
 
-        if (direction == MoveDirection.BACKWARD) {
-
-            Vector2d movedNorth = this.getPosition().subtract(new Vector2d(0, 1));
-            Vector2d movedSouth =this.getPosition().subtract(new Vector2d(0, -1));
-            Vector2d movedEast =this.getPosition().subtract(new Vector2d(1, 0));
-            Vector2d movedWest =this.getPosition().subtract(new Vector2d(-1, 0));
-            forwardAndBackwardMovement(mapDirectionTemp, movedNorth, movedSouth, movedEast, movedWest);
-        }
     }
 
-    private void forwardAndBackwardMovement(MapDirection mapDirectionTemp, Vector2d movedNorth, Vector2d movedSouth, Vector2d movedEast, Vector2d movedWest) {
-        switch (mapDirectionTemp) {
-            case NORTH:
-                if (this.getMap().canMoveTo(movedNorth)) {
-                    this.setPosition(movedNorth);
-                    break;
-                }
-            case SOUTH:
-                if (this.getMap().canMoveTo(movedSouth)) {
-                    this.setPosition(movedSouth);
-                }
-                break;
-            case EAST:
-                if (this.getMap().canMoveTo(movedEast)) {
-                    this.setPosition(movedEast);
-                }
-                break;
-            case WEST:
-                if (this.getMap().canMoveTo(movedWest)) {
-                    this.setPosition(movedWest);
-                    break;
-                }
 
-        }
-    }
+
 
 
 }

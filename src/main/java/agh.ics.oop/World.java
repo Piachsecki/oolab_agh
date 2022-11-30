@@ -1,16 +1,22 @@
 package agh.ics.oop;
 
 
+
 public class World {
 
     public static void main(String[] args) {
+        String[] arr= {"f", "b"};
         System.out.println("Start");
-        MoveDirection[] directions = new OptionsParser().parse(args);
+        MoveDirection[] directions = new OptionsParser().parse(arr);
         IWorldMap map = new RectangularMap(10, 5);
-        Vector2d[] positions = {new Vector2d(2, 2), new Vector2d(3, 4)};
-        MapVisualizer mapVisualizer = new MapVisualizer(map);
-        mapVisualizer.draw(new Vector2d(0, 0), new Vector2d(10, 5));
+        Vector2d[] positions = { new Vector2d(2,2), new Vector2d(3,4) };
+        IEngine engine = new SimulationEngine(directions, map, positions);
+        engine.run();
+        System.out.println(map.toString());
+
         System.out.println("Stop");
     }
+
+
 
 }

@@ -1,6 +1,7 @@
 package agh.ics.oop;
 
 public interface IWorldMap {
+
     /**
      * Indicate if any object can move to the given position.
      *

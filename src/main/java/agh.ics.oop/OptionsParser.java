@@ -3,7 +3,7 @@ package agh.ics.oop;
 public class OptionsParser {
 
 
-    public MoveDirection[] parse(String[] array) {
+    public static MoveDirection[] parse(String[] array) {
 
         String[] newCorrectArray = checkIfCorrectInputs(array);
 
@@ -20,7 +20,7 @@ public class OptionsParser {
         return directions;
     }
 
-    private String[] checkIfCorrectInputs(String[] array) {
+    private static String[] checkIfCorrectInputs(String[] array) {
         int size = 0;
         for (int i = 0; i < array.length; i++) {
             if (

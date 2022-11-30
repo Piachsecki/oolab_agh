@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20326ec3-5527-4288-ac70-5e146ace9a74" name="Changes" comment="LAB 3 - Animal class and OptionsParser class + changed the World class where you can move your animal easily">
-      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/IEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/IWorldMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/MapVisualizer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/RectangularMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/SimulationEngine.java" afterDir="false" />
+    <list default="true" id="20326ec3-5527-4288-ac70-5e146ace9a74" name="Changes" comment="LAB 4 - Animal move method created succesfully">
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/RectangularMapTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/SimulationEngineTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/IWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/IWorldMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/MapDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/MapDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/MapDirectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/MapDirectionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/MapVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/MapVisualizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/OptionsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/OptionsParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/RectangularMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/RectangularMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/SimulationEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/SimulationEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Vector2d.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Vector2d.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Vector2dTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Vector2dTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +29,37 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="oolab" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="oolab" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="oolab" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -46,20 +83,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="agh.ics.oop" />
@@ -79,7 +116,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MapDirectionTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="oolab [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="RectangularMapTest.IWorldMapTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="oolab.main" />
       <extension name="coverage">
         <pattern>
@@ -88,7 +146,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="agh.ics.oop" />
-      <option name="MAIN_CLASS_NAME" value="agh.ics.oop.MapDirectionTest" />
+      <option name="MAIN_CLASS_NAME" value="agh.ics.oop.RectangularMapTest" />
+      <option name="METHOD_NAME" value="IWorldMapTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimulationEngineTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="oolab.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="agh.ics.oop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="agh.ics.oop" />
+      <option name="MAIN_CLASS_NAME" value="agh.ics.oop.SimulationEngineTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -113,49 +189,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Vector2dTest.opposite" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="oolab.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="agh.ics.oop.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="agh.ics.oop" />
-      <option name="MAIN_CLASS_NAME" value="agh.ics.oop.Vector2dTest" />
-      <option name="METHOD_NAME" value="opposite" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Vector2dTest.testToString" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="oolab.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="agh.ics.oop.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="agh.ics.oop" />
-      <option name="MAIN_CLASS_NAME" value="agh.ics.oop.Vector2dTest" />
-      <option name="METHOD_NAME" value="testToString" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.World" />
-        <item itemvalue="TestNG.MapDirectionTest" />
         <item itemvalue="TestNG.Vector2dTest" />
-        <item itemvalue="TestNG.Vector2dTest.testToString" />
-        <item itemvalue="TestNG.Vector2dTest.opposite" />
+        <item itemvalue="Gradle.oolab [clean]" />
+        <item itemvalue="TestNG.SimulationEngineTest" />
+        <item itemvalue="TestNG.RectangularMapTest.IWorldMapTest" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +209,8 @@
       <updated>1669304917820</updated>
       <workItem from="1669304920159" duration="28063000" />
       <workItem from="1669477512927" duration="13178000" />
-      <workItem from="1669558435055" duration="7915000" />
+      <workItem from="1669558435055" duration="32399000" />
+      <workItem from="1669810750316" duration="6924000" />
     </task>
     <task id="LOCAL-00001" summary="LAB 1 - World class and enum Direction implemantation.">
       <created>1669314329379</created>
@@ -192,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669483897424</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="LAB 4 - Animal move method created succesfully">
+      <created>1669569733503</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669569733503</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,7 +261,8 @@
     <MESSAGE value="LAB 1 - World class and enum Direction implemantation." />
     <MESSAGE value="LAB 2 - enum MapDirection i Vector2d class and also added MapDirectionTest and Vector2dTest where I wrote Unit Tests for following classes and their methods." />
     <MESSAGE value="LAB 3 - Animal class and OptionsParser class + changed the World class where you can move your animal easily" />
-    <option name="LAST_COMMIT_MESSAGE" value="LAB 3 - Animal class and OptionsParser class + changed the World class where you can move your animal easily" />
+    <MESSAGE value="LAB 4 - Animal move method created succesfully" />
+    <option name="LAST_COMMIT_MESSAGE" value="LAB 4 - Animal move method created succesfully" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/oolab$Vector2dTest.ic" NAME="Vector2dTest Coverage Results" MODIFIED="1669393478434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

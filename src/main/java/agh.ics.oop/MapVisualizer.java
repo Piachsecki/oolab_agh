@@ -6,6 +6,8 @@ public class MapVisualizer {
     private static final String CELL_SEGMENT = "|";
     private IWorldMap map;
 
+    public static int g = 0;
+
     /**
      * Initializes the MapVisualizer with an instance of map to visualize.
      * @param map
@@ -67,6 +69,7 @@ public class MapVisualizer {
         String result = null;
         if (this.map.isOccupied(currentPosition)) {
             Object object = this.map.objectAt(currentPosition);
+
             if (object != null) {
                 result = object.toString();
             } else {
