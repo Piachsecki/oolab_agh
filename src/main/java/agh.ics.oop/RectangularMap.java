@@ -41,16 +41,16 @@ public class RectangularMap implements IWorldMap {
 
     @Override
     public boolean canMoveTo(Vector2d position) {
-        return position.follows(new Vector2d(0,0))
+        return position.follows(new Vector2d(0, 0))
                 && position
-                .precedes(new Vector2d(width-1,height-1))
+                .precedes(new Vector2d(width - 1, height - 1))
                 && !isOccupied(position);
 
     }
 
     @Override
     public boolean place(Animal animal) {
-        if(this.canMoveTo(animal.getPosition())){
+        if (this.canMoveTo(animal.getPosition())) {
             animals.add(animal);
             return true;
         }

@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20326ec3-5527-4288-ac70-5e146ace9a74" name="Changes" comment="LAB 4 - Animal move method created succesfully">
-      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/RectangularMapTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/SimulationEngineTest.java" afterDir="false" />
+    <list default="true" id="20326ec3-5527-4288-ac70-5e146ace9a74" name="Changes" comment="LAB 4 - Tests added and program for LAB4 finished">
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Grass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/GrassField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/IWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/IWorldMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/MapDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/MapDirection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/MapDirectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/MapDirectionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/MapVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/MapVisualizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/OptionsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/OptionsParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/RectangularMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/RectangularMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/SimulationEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/SimulationEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Vector2d.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Vector2d.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Vector2dTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/Vector2dTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh.ics.oop/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh.ics.oop/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +200,8 @@
       <workItem from="1669304920159" duration="28063000" />
       <workItem from="1669477512927" duration="13178000" />
       <workItem from="1669558435055" duration="32399000" />
-      <workItem from="1669810750316" duration="6924000" />
+      <workItem from="1669810750316" duration="9699000" />
+      <workItem from="1669910947056" duration="9658000" />
     </task>
     <task id="LOCAL-00001" summary="LAB 1 - World class and enum Direction implemantation.">
       <created>1669314329379</created>
@@ -240,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669569733503</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="LAB 4 - Tests added and program for LAB4 finished">
+      <created>1669817920795</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669817920795</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +260,8 @@
     <MESSAGE value="LAB 2 - enum MapDirection i Vector2d class and also added MapDirectionTest and Vector2dTest where I wrote Unit Tests for following classes and their methods." />
     <MESSAGE value="LAB 3 - Animal class and OptionsParser class + changed the World class where you can move your animal easily" />
     <MESSAGE value="LAB 4 - Animal move method created succesfully" />
-    <option name="LAST_COMMIT_MESSAGE" value="LAB 4 - Animal move method created succesfully" />
+    <MESSAGE value="LAB 4 - Tests added and program for LAB4 finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="LAB 4 - Tests added and program for LAB4 finished" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/oolab$Vector2dTest.ic" NAME="Vector2dTest Coverage Results" MODIFIED="1669393478434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
