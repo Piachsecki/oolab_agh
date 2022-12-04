@@ -1,6 +1,8 @@
 package agh.ics.oop;
 
 public class Animal {
+    private static final Vector2d LOWER_BOUND = new Vector2d(0,0);
+    private static final Vector2d UPPER_BOUND = new Vector2d(4,4);
     private MapDirection mapDirection;
     private Vector2d position;
 
@@ -68,8 +70,9 @@ public class Animal {
 
                 temp_position = position.add(mapDirection.toUnitVector());
                 if(map.canMoveTo(temp_position)){
-
                     position=temp_position;
+                    map.moveOnMap(temp_position);
+
                 }
 
             }
@@ -77,6 +80,8 @@ public class Animal {
                 temp_position = position.subtract(mapDirection.toUnitVector());
                 if(map.canMoveTo(temp_position)){
                     position=temp_position;
+                    map.moveOnMap(temp_position);
+
                 }
 
             }

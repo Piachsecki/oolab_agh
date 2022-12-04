@@ -1,5 +1,9 @@
-package agh.ics.oop;
+package agh.ics.oop.test;
 
+import agh.ics.oop.Animal;
+import agh.ics.oop.IWorldMap;
+import agh.ics.oop.RectangularMap;
+import agh.ics.oop.Vector2d;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.*;

@@ -54,11 +54,12 @@ public class Vector2d {
         return new Vector2d(this.getX() - other.getX(), this.getY() - other.getY());
     }
 
-    public Vector2d upperRight(Vector2d other){
-        return new Vector2d(Math.max(other.x, this.x), Math.max(other.y, this.y));
+    public Vector2d upperRight(Vector2d other) {
+        return new Vector2d(Math.max(x, other.x), Math.max(y, other.y));
     }
-    public Vector2d lowerLeft(Vector2d other){
-        return new Vector2d(Math.min(other.x, this.x), Math.min(other.y, this.y));
+
+    public Vector2d lowerLeft(Vector2d other) {
+        return new Vector2d(Math.min(x, other.x), Math.min(y, other.y));
     }
 
     public Vector2d opposite(){

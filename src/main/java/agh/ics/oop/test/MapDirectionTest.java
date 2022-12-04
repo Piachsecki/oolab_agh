@@ -1,5 +1,6 @@
-package agh.ics.oop;
+package agh.ics.oop.test;
 
+import agh.ics.oop.MapDirection;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertEquals;
