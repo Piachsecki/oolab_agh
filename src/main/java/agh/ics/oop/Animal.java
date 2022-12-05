@@ -1,5 +1,8 @@
 package agh.ics.oop;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Animal {
     private static final Vector2d LOWER_BOUND = new Vector2d(0,0);
     private static final Vector2d UPPER_BOUND = new Vector2d(4,4);
@@ -7,6 +10,8 @@ public class Animal {
     private Vector2d position;
 
     private IWorldMap map;
+
+    private List<IPositionChangeObserver> observers = new ArrayList<>();
 
     public Animal(IWorldMap map){
         this.mapDirection = MapDirection.NORTH;
@@ -70,8 +75,8 @@ public class Animal {
 
                 temp_position = position.add(mapDirection.toUnitVector());
                 if(map.canMoveTo(temp_position)){
+                    positionChanged(position, temp_position);
                     position=temp_position;
-                    map.moveOnMap(temp_position);
 
                 }
 
@@ -79,8 +84,8 @@ public class Animal {
             case BACKWARD -> {
                 temp_position = position.subtract(mapDirection.toUnitVector());
                 if(map.canMoveTo(temp_position)){
+                    positionChanged(position, temp_position);
                     position=temp_position;
-                    map.moveOnMap(temp_position);
 
                 }
 
@@ -90,8 +95,19 @@ public class Animal {
 
     }
 
+    private void positionChanged(Vector2d oldPosition, Vector2d newPosition) {
+        for (IPositionChangeObserver observer : observers) {
+            observer.positionChanged(oldPosition, newPosition);
+        }
+    }
 
+    public void addObserver(IPositionChangeObserver observer){
+        observers.add(observer);
+    }
 
+    public void removeObserver(IPositionChangeObserver observer){
+        observers.remove(observer);
+    }
 
 
 }

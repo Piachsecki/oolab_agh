@@ -3,6 +3,9 @@ package agh.ics.oop;
 public class Grass {
     private Vector2d position;
 
+    public Grass() {
+    }
+
     @Override
     public String toString() {
         return "*";

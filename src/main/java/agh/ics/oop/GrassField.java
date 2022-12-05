@@ -1,11 +1,14 @@
 package agh.ics.oop;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
 public class GrassField extends AbstractWorld {
     private int numberOfGrassFields;
+    protected HashMap<Vector2d,Grass> grassOnField = new HashMap<>();
+
 
     public GrassField(int numberOfGrassFields){
         this.numberOfGrassFields = numberOfGrassFields;
@@ -21,32 +24,35 @@ public class GrassField extends AbstractWorld {
         int y = random.nextInt((int) Math.sqrt(numberOfGrassFields*10)+1);
         Vector2d grassPosition = new Vector2d(x, y);
         if (!isOccupied(grassPosition)){
-            grassOnField.add(new Grass(grassPosition));
+            grassOnField.put(grassPosition, new Grass());
         }
     }
 
     @Override
     public Vector2d findUpperRightBound() {
-        Vector2d upperRight = animalsOnField.get(1).getPosition();
-        for (Animal animal: animalsOnField){
+        Animal firstKey = (Animal) animalsOnField.keySet().toArray()[0];
+        Vector2d upperRight = firstKey.getPosition();
+
+        for (Animal animal: animalsOnField.keySet()){
             upperRight=animal.getPosition().upperRight(upperRight);
         }
 
-        for (Grass grass: grassOnField){
-            upperRight=grass.getPosition().upperRight(upperRight);
+        for(Vector2d grassPosition: grassOnField.keySet()){
+            upperRight=grassPosition.upperRight(upperRight);
         }
         return upperRight;
     }
 
     @Override
     public Vector2d findLowerLeftBound() {
-        Vector2d lowerLeft = animalsOnField.get(1).getPosition();
-        for (Animal animal: animalsOnField){
+        Animal firstKey = (Animal) animalsOnField.keySet().toArray()[0];
+        Vector2d lowerLeft = firstKey.getPosition();
+        for (Animal animal: animalsOnField.keySet()){
             lowerLeft=animal.getPosition().lowerLeft(lowerLeft);
         }
 
-        for (Grass grass: grassOnField){
-            lowerLeft=grass.getPosition().lowerLeft(lowerLeft);
+        for (Vector2d grassPosition: grassOnField.keySet()){
+            lowerLeft=grassPosition.lowerLeft(lowerLeft);
         }
         return lowerLeft;    }
 
@@ -60,7 +66,7 @@ public class GrassField extends AbstractWorld {
     @Override
     public boolean place(Animal animal) {
         if (this.canMoveTo(animal.getPosition())) {
-            animalsOnField.add(animal);
+            animalsOnField.put(animal, animal.getPosition());
             return true;
         }
         return false;
@@ -68,13 +74,13 @@ public class GrassField extends AbstractWorld {
 
     @Override
     public boolean isOccupied(Vector2d position) {
-        for (Animal animal : animalsOnField) {
+        for (Animal animal : animalsOnField.keySet()) {
             if (animal.isAt(position))
                 return true;
         }
 
-        for (Grass grass : grassOnField) {
-            if (grass.getPosition().equals(position)){
+        for (Vector2d grassPosition : grassOnField.keySet()) {
+            if (grassPosition.equals(position)){
                 return true;
             }
         }
@@ -83,29 +89,20 @@ public class GrassField extends AbstractWorld {
 
     @Override
     public Object objectAt(Vector2d position) {
-        for (Animal animal : animalsOnField) {
+        for (Animal animal : animalsOnField.keySet()) {
             if (animal.isAt(position))
                 return animal;
         }
 
-        for (Grass grass : grassOnField) {
-            if (grass.getPosition().equals(position)){
-                return grass;
+        for (Vector2d grass : grassOnField.keySet()) {
+            if (grass.equals(position)){
+                return grassOnField.get(grass);
             }
         }
 
         return null;
     }
 
-    @Override
-    public void moveOnMap(Vector2d position) {
-        for (Grass grass : grassOnField) {
-            if(grass.getPosition() == position){
-                grassOnField.remove(grass);
-                createGrass();
-            }
 
-        }
-    }
 
 }

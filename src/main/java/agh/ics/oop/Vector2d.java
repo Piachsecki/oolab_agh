@@ -18,13 +18,16 @@ public class Vector2d {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Vector2d vector2d = (Vector2d) o;
-        return x == vector2d.x && y == vector2d.y;
+
+        if (x != vector2d.x) return false;
+        return y == vector2d.y;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y);
+        return Objects.hash(this.x, this.y);
     }
 
     @Override
