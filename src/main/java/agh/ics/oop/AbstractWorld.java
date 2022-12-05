@@ -3,9 +3,9 @@ package agh.ics.oop;
 import java.util.HashMap;
 import java.util.Map;
 
-abstract class AbstractWorld implements IWorldMap, IPositionChangeObserver {
+public abstract class AbstractWorld implements IWorldMap, IPositionChangeObserver {
 
-    protected Map<Animal, Vector2d> animalsOnField = new HashMap<>();
+    protected Map<Vector2d, Animal> animalsOnField = new HashMap<>();
 
     public abstract Vector2d findLowerLeftBound();
 
@@ -21,7 +21,7 @@ abstract class AbstractWorld implements IWorldMap, IPositionChangeObserver {
     @Override
     public boolean place(Animal animal) {
         if (this.canMoveTo(animal.getPosition())) {
-            animalsOnField.put(animal, animal.getPosition());
+            animalsOnField.put(animal.getPosition(), animal);
             return true;
         }
         return false;
@@ -29,8 +29,8 @@ abstract class AbstractWorld implements IWorldMap, IPositionChangeObserver {
 
     @Override
     public boolean isOccupied(Vector2d position) {
-        for (Animal animal : animalsOnField.keySet()) {
-            if (animal.isAt(position))
+        for (Vector2d animalPosition : animalsOnField.keySet()) {
+            if (animalPosition.equals(position))
                 return true;
         }
         return false;
@@ -38,9 +38,9 @@ abstract class AbstractWorld implements IWorldMap, IPositionChangeObserver {
 
     @Override
     public Object objectAt(Vector2d position) {
-        for (Animal animal : animalsOnField.keySet()) {
-            if (animal.isAt(position))
-                return animal;
+        for (Vector2d animalPosition : animalsOnField.keySet()) {
+            if (animalPosition.equals(position))
+                return animalsOnField.get(animalPosition);
         }
 
         return null;
@@ -54,11 +54,8 @@ abstract class AbstractWorld implements IWorldMap, IPositionChangeObserver {
 
     @Override
     public void positionChanged(Vector2d oldPosition, Vector2d newPosition) {
-        for (Animal animal : animalsOnField.keySet()) {
-            if(animal.isAt(oldPosition)){
-                animalsOnField.remove(animal);
-                animalsOnField.put(new Animal(), newPosition);
-            }
+                animalsOnField.put(newPosition, animalsOnField.get(oldPosition) );
+                animalsOnField.remove(oldPosition);
         }
     }
-}
+

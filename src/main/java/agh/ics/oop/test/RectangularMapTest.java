@@ -20,7 +20,7 @@ public class RectangularMapTest {
         Animal animal2 = new Animal(map,pos2);
         Animal animal3=new Animal(map,pos3);
         Animal animal4=new Animal(map,pos);
-        assertFalse(map.canMoveTo(new Vector2d(2,10)));
+        assertTrue(map.canMoveTo(new Vector2d(2,10)));
         assertTrue(map.place(animal));
         assertTrue(map.place(animal2));
         assertTrue(map.place(animal3));

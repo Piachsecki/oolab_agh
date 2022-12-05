@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20326ec3-5527-4288-ac70-5e146ace9a74" name="Changes" comment="LAB5 update 2.0 everything for LAB5 is finished">
-      <change afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/IPositionChangeObserver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/AbstractWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/AbstractWorld.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Grass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Grass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/GrassField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/GrassField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/IWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/IWorldMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/SimulationEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/SimulationEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Vector2d.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Vector2d.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/test/RectangularMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/test/RectangularMapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/test/SimulationEngineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/test/SimulationEngineTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +110,7 @@
       <module name="oolab.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="agh.ics.oop.test.*" />
+          <option name="PATTERN" value="agh.ics.oop.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,28 +118,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="oolab [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="GrassFieldTest.GrassFieldMapTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GrassFieldTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="oolab.main" />
       <extension name="coverage">
         <pattern>
@@ -149,15 +128,14 @@
       </extension>
       <option name="PACKAGE_NAME" value="agh.ics.oop.test" />
       <option name="MAIN_CLASS_NAME" value="agh.ics.oop.test.GrassFieldTest" />
-      <option name="METHOD_NAME" value="GrassFieldMapTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RectangularMapTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SimulationEngineTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="oolab.main" />
       <extension name="coverage">
         <pattern>
@@ -166,8 +144,26 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="agh.ics.oop.test" />
-      <option name="MAIN_CLASS_NAME" value="agh.ics.oop.test.RectangularMapTest" />
+      <option name="MAIN_CLASS_NAME" value="agh.ics.oop.test.SimulationEngineTest" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimulationEngineTest.AnimalOccuppiedTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="oolab.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="agh.ics.oop.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="agh.ics.oop.test" />
+      <option name="MAIN_CLASS_NAME" value="agh.ics.oop.test.SimulationEngineTest" />
+      <option name="METHOD_NAME" value="AnimalOccuppiedTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -182,7 +178,7 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="agh.ics.oop" />
+      <option name="PACKAGE_NAME" value="agh.ics.oop.test" />
       <option name="MAIN_CLASS_NAME" value="agh.ics.oop.test.Vector2dTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
@@ -193,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.GrassFieldTest.GrassFieldMapTest" />
-        <item itemvalue="TestNG.RectangularMapTest" />
-        <item itemvalue="Gradle.oolab [clean]" />
         <item itemvalue="Application.World" />
         <item itemvalue="TestNG.Vector2dTest" />
+        <item itemvalue="TestNG.GrassFieldTest" />
+        <item itemvalue="TestNG.SimulationEngineTest" />
+        <item itemvalue="TestNG.SimulationEngineTest.AnimalOccuppiedTest" />
       </list>
     </recent_temporary>
   </component>

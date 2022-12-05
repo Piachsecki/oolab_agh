@@ -5,14 +5,14 @@ import java.util.List;
 
 public class SimulationEngine implements IEngine {
     private MoveDirection[] directions;
-    private IWorldMap map;
+    private AbstractWorld map;
     private Vector2d[] positions;
 
     private List<Animal> animals;
 
     public SimulationEngine(
             MoveDirection[] directions,
-            IWorldMap map,
+            AbstractWorld map,
             Vector2d[] positions
     ) {
         this.directions = directions;
@@ -36,13 +36,6 @@ public class SimulationEngine implements IEngine {
         this.directions = directions;
     }
 
-    public IWorldMap getMap() {
-        return map;
-    }
-
-    public void setMap(IWorldMap map) {
-        this.map = map;
-    }
 
     public Vector2d[] getPositions() {
         return positions;

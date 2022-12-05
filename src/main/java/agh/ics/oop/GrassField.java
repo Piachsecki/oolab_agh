@@ -30,11 +30,11 @@ public class GrassField extends AbstractWorld {
 
     @Override
     public Vector2d findUpperRightBound() {
-        Animal firstKey = (Animal) animalsOnField.keySet().toArray()[0];
+        Animal firstKey = (Animal) animalsOnField.values().toArray()[0];
         Vector2d upperRight = firstKey.getPosition();
 
-        for (Animal animal: animalsOnField.keySet()){
-            upperRight=animal.getPosition().upperRight(upperRight);
+        for (Vector2d animalPosition: animalsOnField.keySet()){
+            upperRight=animalPosition.upperRight(upperRight);
         }
 
         for(Vector2d grassPosition: grassOnField.keySet()){
@@ -45,10 +45,10 @@ public class GrassField extends AbstractWorld {
 
     @Override
     public Vector2d findLowerLeftBound() {
-        Animal firstKey = (Animal) animalsOnField.keySet().toArray()[0];
+        Animal firstKey = (Animal) animalsOnField.values().toArray()[0];
         Vector2d lowerLeft = firstKey.getPosition();
-        for (Animal animal: animalsOnField.keySet()){
-            lowerLeft=animal.getPosition().lowerLeft(lowerLeft);
+        for (Vector2d animalPosition: animalsOnField.keySet()){
+            lowerLeft=animalPosition.lowerLeft(lowerLeft);
         }
 
         for (Vector2d grassPosition: grassOnField.keySet()){
@@ -56,17 +56,11 @@ public class GrassField extends AbstractWorld {
         }
         return lowerLeft;    }
 
-    @Override
-    public boolean canMoveTo(Vector2d position) {
-        Object obj = objectAt(position);
-        return !(obj instanceof Animal);
-
-    }
 
     @Override
     public boolean place(Animal animal) {
         if (this.canMoveTo(animal.getPosition())) {
-            animalsOnField.put(animal, animal.getPosition());
+            animalsOnField.put(animal.getPosition(), animal);
             return true;
         }
         return false;
@@ -74,8 +68,8 @@ public class GrassField extends AbstractWorld {
 
     @Override
     public boolean isOccupied(Vector2d position) {
-        for (Animal animal : animalsOnField.keySet()) {
-            if (animal.isAt(position))
+        for (Vector2d animalPosition : animalsOnField.keySet()) {
+            if (animalPosition.equals(position))
                 return true;
         }
 
@@ -89,9 +83,9 @@ public class GrassField extends AbstractWorld {
 
     @Override
     public Object objectAt(Vector2d position) {
-        for (Animal animal : animalsOnField.keySet()) {
-            if (animal.isAt(position))
-                return animal;
+        for (Vector2d animalPosition : animalsOnField.keySet()) {
+            if (animalPosition.equals(position))
+                return animalsOnField.get(position);
         }
 
         for (Vector2d grass : grassOnField.keySet()) {

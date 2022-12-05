@@ -73,19 +73,19 @@ public class Animal {
             case LEFT -> mapDirection = mapDirection.previous();
             case FORWARD-> {
 
-                temp_position = position.add(mapDirection.toUnitVector());
+                temp_position = this.position.add(mapDirection.toUnitVector());
                 if(map.canMoveTo(temp_position)){
-                    positionChanged(position, temp_position);
-                    position=temp_position;
+                    positionChanged(this.position, temp_position);
+                    this.position=temp_position;
 
                 }
 
             }
             case BACKWARD -> {
-                temp_position = position.subtract(mapDirection.toUnitVector());
+                temp_position = this.position.subtract(mapDirection.toUnitVector());
                 if(map.canMoveTo(temp_position)){
-                    positionChanged(position, temp_position);
-                    position=temp_position;
+                    positionChanged(this.position, temp_position);
+                    this.position=temp_position;
 
                 }
 
