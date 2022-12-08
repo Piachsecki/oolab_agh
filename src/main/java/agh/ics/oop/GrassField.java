@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 public class GrassField extends AbstractWorld {
-    private int numberOfGrassFields;
+    private final int numberOfGrassFields;
     protected HashMap<Vector2d,Grass> grassOnField = new HashMap<>();
 
 
@@ -57,14 +57,6 @@ public class GrassField extends AbstractWorld {
         return lowerLeft;    }
 
 
-    @Override
-    public boolean place(Animal animal) {
-        if (this.canMoveTo(animal.getPosition())) {
-            animalsOnField.put(animal.getPosition(), animal);
-            return true;
-        }
-        return false;
-    }
 
     @Override
     public boolean isOccupied(Vector2d position) {

@@ -11,7 +11,7 @@ public class Animal {
 
     private IWorldMap map;
 
-    private List<IPositionChangeObserver> observers = new ArrayList<>();
+    private final List<IPositionChangeObserver> observers = new ArrayList<>();
 
     public Animal(IWorldMap map){
         this.mapDirection = MapDirection.NORTH;

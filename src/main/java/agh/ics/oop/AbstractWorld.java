@@ -19,12 +19,12 @@ public abstract class AbstractWorld implements IWorldMap, IPositionChangeObserve
     }
 
     @Override
-    public boolean place(Animal animal) {
+    public boolean place(Animal animal) throws IllegalArgumentException{
         if (this.canMoveTo(animal.getPosition())) {
             animalsOnField.put(animal.getPosition(), animal);
             return true;
         }
-        return false;
+        throw new IllegalArgumentException("method: place(Animal animal) -> This field is already taken");
     }
 
     @Override

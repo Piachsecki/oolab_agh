@@ -6,7 +6,8 @@ import agh.ics.oop.RectangularMap;
 import agh.ics.oop.Vector2d;
 import org.testng.annotations.Test;
 
-import static org.testng.AssertJUnit.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 public class RectangularMapTest {
 

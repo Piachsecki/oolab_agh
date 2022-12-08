@@ -4,9 +4,9 @@ import agh.ics.oop.Animal;
 import agh.ics.oop.GrassField;
 import agh.ics.oop.IWorldMap;
 import agh.ics.oop.Vector2d;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.testng.AssertJUnit.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GrassFieldTest {
 

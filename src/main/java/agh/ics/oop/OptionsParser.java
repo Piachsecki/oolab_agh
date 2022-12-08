@@ -20,7 +20,7 @@ public class OptionsParser {
         return directions;
     }
 
-    private static String[] checkIfCorrectInputs(String[] array) {
+    private static String[] checkIfCorrectInputs(String[] array) throws IllegalArgumentException {
         int size = 0;
         for (int i = 0; i < array.length; i++) {
             if (
@@ -30,6 +30,8 @@ public class OptionsParser {
                             array[i].equals("l")
             ) {
                 size++;
+            }else {
+                throw new IllegalArgumentException(array[i] + " is not legal move specification");
             }
         }
         String[] temp = new String[size];

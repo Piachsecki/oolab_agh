@@ -1,9 +1,10 @@
 package agh.ics.oop.test;
 
 import agh.ics.oop.MapDirection;
-import org.testng.annotations.Test;
+import org.junit.Test;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class MapDirectionTest {
 
